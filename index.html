@@ -4,170 +4,232 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elise Dennison — Healthcare Operations & Market Development</title>
-<meta name="description" content="Elise Dennison — Healthcare operations professional and Market Manager at Monogram Health. MHA graduate driving positive health outcomes across West Virginia.">
+<meta name="description" content="Elise Dennison — Healthcare operations professional and Market Manager at Monogram Health. MHA graduate driving positive health outcomes across West Virginia, Virginia, and Tennessee.">
 <link rel="canonical" href="https://elisedennison.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --teal: #1a6b6b;
-  --teal2: #245f5f;
-  --teal3: rgba(26,107,107,0.08);
-  --teal4: rgba(26,107,107,0.15);
-  --gold: #b5862a;
-  --gold2: rgba(181,134,42,0.12);
-  --cream: #faf7f2;
-  --cream2: #f3ede3;
-  --cream3: #e8dfd0;
-  --ink: #1c1c1a;
-  --ink2: #3a3a36;
-  --ink3: #6b6b64;
-  --ink4: #9a9a90;
-  --border: rgba(28,28,26,0.1);
-  --border2: rgba(28,28,26,0.18);
-  --serif: 'Cormorant Garamond', Georgia, serif;
+  --teal: #1a5c5c;
+  --teal2: #144848;
+  --teal3: #0f3838;
+  --teal-light: rgba(26,92,92,0.08);
+  --teal-mid: rgba(26,92,92,0.15);
+  --gold: #c9973a;
+  --gold2: rgba(201,151,58,0.15);
+  --gold3: rgba(201,151,58,0.08);
+  --cream: #faf8f4;
+  --cream2: #f2ede4;
+  --cream3: #e6ddd0;
+  --ink: #18181a;
+  --ink2: #2e2e30;
+  --ink3: #5a5a5c;
+  --ink4: #8a8a8c;
+  --white: #ffffff;
+  --border: rgba(24,24,26,0.09);
+  --border2: rgba(24,24,26,0.16);
+  --serif: 'Playfair Display', Georgia, serif;
   --sans: 'DM Sans', sans-serif;
   --mono: 'DM Mono', monospace;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+  --shadow2: 0 2px 8px rgba(0,0,0,0.08), 0 12px 40px rgba(0,0,0,0.1);
 }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { background: var(--cream); color: var(--ink); font-family: var(--sans); min-height: 100vh; overflow-x: hidden; }
+body { background: var(--cream); color: var(--ink); font-family: var(--sans); overflow-x: hidden; }
 
-/* NAV */
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,247,242,0.97); border-bottom: 1px solid var(--border); padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; backdrop-filter: blur(8px); }
-.nav-logo { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--ink); letter-spacing: 0.02em; }
+/* ── NAV ── */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 0 3rem; height: 64px; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s; }
+.nav.scrolled { background: rgba(250,248,244,0.98); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); box-shadow: var(--shadow); }
+.nav-logo { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--white); letter-spacing: 0.02em; transition: color 0.3s; }
+.nav.scrolled .nav-logo { color: var(--ink); }
 .nav-links { display: flex; gap: 2.5rem; }
-.nav-link { font-size: 12px; letter-spacing: 0.1em; color: var(--ink3); text-decoration: none; text-transform: uppercase; transition: color 0.15s; }
-.nav-link:hover { color: var(--teal); }
-.nav-cta { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 20px; background: var(--teal); color: #fff; text-decoration: none; transition: all 0.15s; }
-.nav-cta:hover { background: var(--teal2); }
+.nav-link { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.15s; font-weight: 400; }
+.nav-link:hover { color: var(--white); }
+.nav.scrolled .nav-link { color: var(--ink3); }
+.nav.scrolled .nav-link:hover { color: var(--teal); }
+.nav-cta { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 9px 22px; background: transparent; border: 1px solid rgba(255,255,255,0.5); color: var(--white); text-decoration: none; transition: all 0.2s; font-weight: 500; }
+.nav-cta:hover { background: rgba(255,255,255,0.15); border-color: var(--white); }
+.nav.scrolled .nav-cta { border-color: var(--teal); color: var(--teal); background: transparent; }
+.nav.scrolled .nav-cta:hover { background: var(--teal); color: var(--white); }
 
-/* HERO */
-.hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 2.5rem 5rem; position: relative; overflow: hidden; background: var(--cream); }
-.hero-bg { position: absolute; right: 0; top: 0; bottom: 0; width: 45%; background: linear-gradient(135deg, var(--teal) 0%, var(--teal2) 100%); clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); }
-.hero-bg-pattern { position: absolute; right: 0; top: 0; bottom: 0; width: 45%; background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0); background-size: 28px 28px; clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%); }
-.hero-content { position: relative; z-index: 1; max-width: 580px; }
-.hero-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
-.hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--teal); }
-.hero-name { font-family: var(--serif); font-size: clamp(52px, 7vw, 88px); font-weight: 400; line-height: 0.95; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 1.25rem; }
-.hero-name em { font-style: italic; color: var(--teal); }
-.hero-title { font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); margin-bottom: 2rem; font-weight: 400; }
-.hero-bio { font-size: 16px; line-height: 1.85; color: var(--ink2); max-width: 480px; margin-bottom: 2.5rem; font-weight: 300; }
-.hero-bio strong { font-weight: 500; color: var(--ink); }
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-.btn { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 32px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; font-weight: 500; }
-.btn-primary { background: var(--teal); color: #fff; }
-.btn-primary:hover { background: var(--teal2); transform: translateY(-1px); }
-.btn-outline { background: transparent; color: var(--teal); border: 1px solid var(--teal); }
-.btn-outline:hover { background: var(--teal3); }
-.hero-credential { position: absolute; right: 5%; bottom: 12%; z-index: 2; text-align: center; }
-.hero-credential-badge { background: rgba(250,247,242,0.12); border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(8px); padding: 1rem 1.5rem; }
-.hero-credential-degree { font-family: var(--serif); font-size: 18px; color: #fff; font-weight: 400; margin-bottom: 2px; }
-.hero-credential-school { font-size: 10px; letter-spacing: 0.15em; color: rgba(255,255,255,0.65); text-transform: uppercase; }
+/* ── HERO ── */
+.hero { min-height: 100vh; background: linear-gradient(160deg, var(--teal3) 0%, var(--teal2) 40%, var(--teal) 100%); position: relative; display: flex; align-items: flex-end; overflow: hidden; }
+.hero-pattern { position: absolute; inset: 0; background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0); background-size: 40px 40px; }
+.hero-glow { position: absolute; top: -20%; right: -10%; width: 70%; height: 80%; background: radial-gradient(ellipse, rgba(201,151,58,0.08) 0%, transparent 65%); pointer-events: none; }
+.hero-line { position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--gold), rgba(201,151,58,0.3), transparent); }
+.hero-content { position: relative; z-index: 1; width: 100%; padding: 10rem 3rem 6rem; display: grid; grid-template-columns: 1fr 420px; gap: 4rem; align-items: end; max-width: 1300px; margin: 0 auto; }
+.hero-left { }
+.hero-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+.hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+.hero-name { font-family: var(--serif); font-size: clamp(56px, 7.5vw, 104px); font-weight: 400; line-height: 0.92; color: var(--white); margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+.hero-name em { font-style: italic; font-weight: 400; display: block; color: rgba(255,255,255,0.75); }
+.hero-divider { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.hero-divider-line { width: 40px; height: 1px; background: var(--gold); }
+.hero-divider-text { font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+.hero-bio { font-size: 17px; line-height: 1.85; color: rgba(255,255,255,0.72); max-width: 540px; font-weight: 300; }
+.hero-bio strong { color: var(--white); font-weight: 500; }
+.hero-right { padding-bottom: 0.5rem; }
+.hero-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(12px); padding: 2rem; margin-bottom: 1rem; }
+.hero-card:last-child { margin-bottom: 0; }
+.hero-card-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+.hero-card-value { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.5; font-weight: 300; }
+.hero-card-value strong { color: var(--white); font-weight: 500; }
+.hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 2.5rem; }
+.btn { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 30px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; font-weight: 500; }
+.btn-gold { background: var(--gold); color: var(--white); border: 1px solid var(--gold); }
+.btn-gold:hover { background: #b5862a; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,151,58,0.3); }
+.btn-ghost { background: transparent; color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.25); }
+.btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); color: var(--white); }
 
-/* SECTION */
-.section { padding: 6rem 2.5rem; }
-.section-inner { max-width: 1100px; margin: 0 auto; }
-.section-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
-.section-eyebrow::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--teal); }
-.section-title { font-family: var(--serif); font-size: clamp(36px, 4vw, 52px); font-weight: 400; line-height: 1.1; color: var(--ink); margin-bottom: 3rem; }
-.section-title em { font-style: italic; color: var(--teal); }
-.divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+/* ── STATS BAR ── */
+.stats-bar { background: var(--ink); padding: 2.5rem 3rem; }
+.stats-inner { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.stat-item { text-align: center; padding: 0 1rem; border-right: 1px solid rgba(255,255,255,0.08); }
+.stat-item:last-child { border-right: none; }
+.stat-num { font-family: var(--serif); font-size: 42px; font-weight: 400; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
+.stat-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
 
-/* ABOUT */
+/* ── SECTION BASE ── */
+.section { padding: 7rem 3rem; }
+.section-inner { max-width: 1300px; margin: 0 auto; }
+.section-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+.section-tag::after { content: ''; width: 32px; height: 1px; background: var(--teal); }
+.section-heading { font-family: var(--serif); font-size: clamp(38px, 4vw, 58px); font-weight: 400; line-height: 1.05; color: var(--ink); margin-bottom: 4rem; }
+.section-heading em { font-style: italic; color: var(--teal); }
+.divider { border: none; border-top: 1px solid var(--border); }
+
+/* ── ABOUT ── */
 .about-bg { background: var(--cream2); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-.about-text { font-size: 15px; line-height: 1.9; color: var(--ink2); font-weight: 300; }
-.about-text p { margin-bottom: 1.25rem; }
-.about-text p:last-child { margin-bottom: 0; }
-.about-text strong { font-weight: 500; color: var(--ink); }
-.about-cards { display: flex; flex-direction: column; gap: 1rem; }
-.about-card { background: var(--cream); border: 1px solid var(--border); padding: 1.25rem 1.5rem; border-left: 3px solid var(--teal); }
-.about-card-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; }
-.about-card-value { font-size: 14px; color: var(--ink2); line-height: 1.5; font-weight: 300; }
-.about-card-value strong { font-weight: 500; color: var(--ink); }
+.about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.about-lead { font-family: var(--serif); font-size: 22px; font-weight: 400; line-height: 1.6; color: var(--ink2); margin-bottom: 2rem; font-style: italic; }
+.about-body { font-size: 15px; line-height: 1.95; color: var(--ink3); font-weight: 300; }
+.about-body p { margin-bottom: 1.25rem; }
+.about-body p:last-child { margin-bottom: 0; }
+.about-body strong { color: var(--ink2); font-weight: 500; }
+.pillars { display: flex; flex-direction: column; gap: 1.25rem; }
+.pillar { background: var(--white); border: 1px solid var(--border); padding: 1.5rem; position: relative; box-shadow: var(--shadow); transition: all 0.2s; }
+.pillar:hover { transform: translateY(-2px); box-shadow: var(--shadow2); }
+.pillar::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--teal); }
+.pillar-icon { font-size: 20px; margin-bottom: 0.5rem; }
+.pillar-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; }
+.pillar-value { font-size: 14px; color: var(--ink3); line-height: 1.55; font-weight: 300; }
+.pillar-value strong { color: var(--ink2); font-weight: 500; }
 
-/* EXPERIENCE */
-.timeline { position: relative; padding-left: 2rem; }
-.timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--teal), var(--cream3)); }
-.timeline-item { position: relative; margin-bottom: 3.5rem; }
-.timeline-item::before { content: ''; position: absolute; left: -2.4rem; top: 8px; width: 10px; height: 10px; border-radius: 50%; background: var(--cream); border: 2px solid var(--teal); }
-.timeline-item.current::before { background: var(--teal); }
-.timeline-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--ink4); margin-bottom: 0.4rem; text-transform: uppercase; }
-.timeline-role { font-family: var(--serif); font-size: 26px; font-weight: 500; color: var(--ink); line-height: 1.1; margin-bottom: 3px; }
-.timeline-org { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; font-weight: 500; }
-.timeline-desc { font-size: 14px; line-height: 1.85; color: var(--ink3); max-width: 680px; font-weight: 300; }
-.timeline-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 0.75rem; }
-.ttag { font-size: 10px; letter-spacing: 0.08em; padding: 3px 10px; border: 1px solid var(--border2); color: var(--ink3); text-transform: uppercase; background: var(--cream2); }
+/* ── EXPERIENCE ── */
+.exp-layout { display: grid; grid-template-columns: 280px 1fr; gap: 4rem; }
+.exp-nav { position: sticky; top: 100px; height: fit-content; }
+.exp-nav-item { padding: 0.75rem 1rem; cursor: pointer; border-left: 2px solid var(--border); font-size: 12px; color: var(--ink4); transition: all 0.15s; letter-spacing: 0.02em; }
+.exp-nav-item:hover { color: var(--teal); border-left-color: var(--teal); padding-left: 1.25rem; }
+.exp-nav-item.active { color: var(--teal); border-left-color: var(--teal); font-weight: 500; background: var(--teal-light); padding-left: 1.25rem; }
+.exp-nav-label { font-family: var(--mono); font-size: 8px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink4); display: block; margin-bottom: 2px; }
+.exp-entries { }
+.exp-entry { padding: 2.5rem; background: var(--white); border: 1px solid var(--border); margin-bottom: 1rem; box-shadow: var(--shadow); transition: all 0.2s; position: relative; overflow: hidden; }
+.exp-entry:hover { box-shadow: var(--shadow2); }
+.exp-entry::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--gold)); transform: scaleX(0); transform-origin: left; transition: transform 0.25s; }
+.exp-entry:hover::after { transform: scaleX(1); }
+.exp-entry.current { border-left: 3px solid var(--teal); }
+.exp-entry-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.exp-current-badge { font-family: var(--mono); font-size: 8px; letter-spacing: 0.15em; text-transform: uppercase; padding: 3px 10px; background: var(--teal); color: var(--white); flex-shrink: 0; }
+.exp-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--ink4); text-transform: uppercase; margin-bottom: 0.4rem; }
+.exp-role { font-family: var(--serif); font-size: 26px; font-weight: 500; color: var(--ink); line-height: 1.1; margin-bottom: 4px; }
+.exp-org { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); font-weight: 500; margin-bottom: 1rem; }
+.exp-desc { font-size: 14px; line-height: 1.9; color: var(--ink3); font-weight: 300; max-width: 680px; }
+.exp-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 1rem; }
+.etag { font-size: 10px; letter-spacing: 0.06em; padding: 3px 10px; border: 1px solid var(--border2); color: var(--ink3); text-transform: uppercase; background: var(--cream2); }
 
-/* EDUCATION */
+/* ── EDUCATION ── */
 .edu-bg { background: var(--teal); }
+.edu-inner { max-width: 1300px; margin: 0 auto; }
+.edu-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+.edu-tag::after { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.edu-heading { font-family: var(--serif); font-size: clamp(38px,4vw,58px); font-weight: 400; line-height: 1.05; color: var(--white); margin-bottom: 4rem; }
+.edu-heading em { font-style: italic; color: var(--gold); }
 .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.edu-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 2rem; position: relative; overflow: hidden; transition: all 0.2s; }
-.edu-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
-.edu-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
-.edu-type { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.75rem; }
-.edu-degree { font-family: var(--serif); font-size: 22px; font-weight: 400; color: #fff; line-height: 1.2; margin-bottom: 0.5rem; }
-.edu-school { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 0.5rem; font-weight: 500; }
-.edu-year { font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: 0.1em; }
-.edu-note { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 0.5rem; line-height: 1.5; font-style: italic; }
-.edu-section-title { font-family: var(--serif); font-size: clamp(36px,4vw,52px); font-weight: 400; color: #fff; margin-bottom: 3rem; }
-.edu-section-title em { font-style: italic; color: var(--gold); }
-.edu-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em; color: rgba(255,255,255,0.5); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
-.edu-eyebrow::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: rgba(255,255,255,0.3); }
+.edu-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: all 0.2s; }
+.edu-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
+.edu-card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.5rem; }
+.edu-type { font-family: var(--mono); font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); padding: 3px 10px; border: 1px solid rgba(201,151,58,0.4); }
+.edu-year { font-family: var(--mono); font-size: 10px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; }
+.edu-degree { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--white); line-height: 1.2; margin-bottom: 0.5rem; }
+.edu-school { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 1rem; font-weight: 500; }
+.edu-note { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.6; font-style: italic; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; }
+.edu-highlight { display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; color: var(--gold); margin-top: 0.5rem; }
 
-/* SKILLS */
-.skills-bg { background: var(--cream2); }
-.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-.skill-group-title { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border2); }
-.skill-item { padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+/* ── SKILLS ── */
+.skills-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+.skill-group-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--teal-mid); }
+.skill-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.skill-row:last-child { border-bottom: none; }
 .skill-name { font-size: 13px; color: var(--ink2); font-weight: 300; }
-.skill-dots { display: flex; gap: 3px; }
-.skill-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border2); }
-.skill-dot.filled { background: var(--teal); }
+.skill-bar-wrap { width: 80px; height: 3px; background: var(--cream3); overflow: hidden; }
+.skill-bar { height: 3px; background: linear-gradient(90deg, var(--teal), var(--gold)); transition: width 1s ease; }
 
-/* CONTACT */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-.contact-intro { font-family: var(--serif); font-size: 20px; line-height: 1.6; color: var(--ink2); font-weight: 300; margin-bottom: 2rem; }
-.contact-intro em { font-style: italic; color: var(--teal); }
-.contact-detail { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start; }
-.contact-detail-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink4); width: 80px; flex-shrink: 0; padding-top: 2px; }
+/* ── CONTACT ── */
+.contact-bg { background: var(--cream2); }
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.contact-left { }
+.contact-headline { font-family: var(--serif); font-size: 28px; font-weight: 400; color: var(--ink); line-height: 1.4; margin-bottom: 2rem; }
+.contact-headline em { font-style: italic; color: var(--teal); }
+.contact-body { font-size: 15px; line-height: 1.85; color: var(--ink3); font-weight: 300; margin-bottom: 2.5rem; }
+.contact-detail { display: flex; gap: 1.25rem; margin-bottom: 1.25rem; align-items: flex-start; }
+.contact-detail-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+.contact-detail-info { }
+.contact-detail-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink4); margin-bottom: 2px; }
 .contact-detail-value { font-size: 14px; color: var(--ink2); font-weight: 300; }
 .contact-detail-value a { color: var(--teal); text-decoration: none; }
 .contact-detail-value a:hover { text-decoration: underline; }
-.form-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink3); display: block; margin-bottom: 6px; }
-.form-input { width: 100%; background: var(--cream); border: 1px solid var(--border2); color: var(--ink); font-family: var(--sans); font-size: 14px; padding: 10px 14px; outline: none; transition: border-color 0.15s; margin-bottom: 1rem; font-weight: 300; }
-.form-input:focus { border-color: var(--teal); }
+.form-wrap { background: var(--white); padding: 2.5rem; border: 1px solid var(--border); box-shadow: var(--shadow2); }
+.form-wrap-label { font-family: var(--serif); font-size: 20px; color: var(--ink); margin-bottom: 1.5rem; }
+.form-group { margin-bottom: 1.25rem; }
+.form-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink3); display: block; margin-bottom: 6px; }
+.form-input { width: 100%; background: var(--cream); border: 1px solid var(--border2); color: var(--ink); font-family: var(--sans); font-size: 14px; padding: 11px 14px; outline: none; transition: border-color 0.15s; font-weight: 300; }
+.form-input:focus { border-color: var(--teal); background: var(--white); }
 .form-input::placeholder { color: var(--ink4); }
-textarea.form-input { min-height: 120px; resize: vertical; }
-.form-submit { width: 100%; padding: 14px; background: var(--teal); color: #fff; border: none; font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; }
+textarea.form-input { min-height: 110px; resize: vertical; }
+.form-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-submit { width: 100%; padding: 15px; background: var(--teal); color: var(--white); border: none; font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; margin-top: 0.5rem; }
 .form-submit:hover { background: var(--teal2); }
 
-/* FOOTER */
-.footer { background: var(--ink); padding: 2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-.footer-name { font-family: var(--serif); font-size: 18px; color: var(--cream); font-weight: 400; }
-.footer-copy { font-size: 11px; color: var(--ink4); letter-spacing: 0.08em; }
-.footer-links { display: flex; gap: 1.5rem; }
-.footer-link { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink4); text-decoration: none; transition: color 0.15s; }
+/* ── FOOTER ── */
+.footer { background: var(--ink2); padding: 3rem; }
+.footer-inner { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+.footer-brand { }
+.footer-name { font-family: var(--serif); font-size: 22px; color: var(--cream); font-weight: 400; margin-bottom: 4px; }
+.footer-title { font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+.footer-links { display: flex; gap: 2rem; }
+.footer-link { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.15s; }
 .footer-link:hover { color: var(--cream); }
+.footer-copy { font-size: 11px; color: rgba(255,255,255,0.2); }
 
-/* MOBILE */
-@media (max-width: 900px) {
+/* ── MOBILE ── */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; }
+  .hero-right { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .hero-card { margin-bottom: 0; }
+  .exp-layout { grid-template-columns: 1fr; }
+  .exp-nav { display: none; }
+}
+@media (max-width: 768px) {
   .nav-links { display: none; }
-  .hero-bg, .hero-bg-pattern { display: none; }
-  .hero-credential { display: none; }
-  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
   .edu-grid { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .section { padding: 4rem 1.5rem; }
-  .footer { flex-direction: column; text-align: center; }
+  .skills-layout { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .section { padding: 5rem 1.5rem; }
+  .stats-bar { padding: 2rem 1.5rem; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .hero-right { grid-template-columns: 1fr; }
+  .form-row2 { grid-template-columns: 1fr; }
+  .nav { padding: 0 1.5rem; }
 }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="nav">
+<nav class="nav" id="nav">
   <div class="nav-logo">Elise Dennison</div>
   <div class="nav-links">
     <a href="#about" class="nav-link">About</a>
@@ -176,62 +238,112 @@ textarea.form-input { min-height: 120px; resize: vertical; }
     <a href="#skills" class="nav-link">Skills</a>
     <a href="#contact" class="nav-link">Contact</a>
   </div>
-  <a href="https://www.linkedin.com/in/elise-dennison" target="_blank" class="btn btn-primary nav-cta">↗ LinkedIn</a>
+  <a href="https://www.linkedin.com/in/elise-dennison-8b133620a/" target="_blank" class="nav-cta btn">↗ LinkedIn</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-bg-pattern"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-line"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Healthcare Operations & Market Development</div>
-    <div class="hero-name"><em>Elise</em><br>Dennison</div>
-    <div class="hero-title">Market Manager · Monogram Health · West Virginia</div>
-    <p class="hero-bio">
-      A healthcare operations leader with a record of driving growth, building partnerships, and improving patient outcomes across West Virginia. Grounded in direct patient care and sharpened through compliance, operations, and business development — <strong>bringing both the human side and the business side to every role.</strong>
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">Get in Touch</a>
-      <a href="#experience" class="btn btn-outline">View Experience</a>
+    <div class="hero-left">
+      <div class="hero-eyebrow">Healthcare Operations & Market Development · WV · VA · TN</div>
+      <div class="hero-name">
+        Elise<br>
+        <em>Dennison</em>
+      </div>
+      <div class="hero-divider">
+        <div class="hero-divider-line"></div>
+        <div class="hero-divider-text">M.H.A. · Market Manager · Monogram Health</div>
+      </div>
+      <p class="hero-bio">
+        A healthcare operations professional with experience spanning direct patient care, compliance operations, and multi-state market development. <strong>Known for building the relationships and systems that turn strategy into outcomes</strong> — across West Virginia, Virginia, and Tennessee.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-gold">Get in Touch</a>
+        <a href="#experience" class="btn btn-ghost">View Experience ↓</a>
+      </div>
     </div>
-  </div>
-  <div class="hero-credential">
-    <div class="hero-credential-badge">
-      <div class="hero-credential-degree">M.H.A.</div>
-      <div class="hero-credential-school">Northern Kentucky University</div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="hero-card-label">Current Position</div>
+        <div class="hero-card-value"><strong>Market Manager</strong><br>Monogram Health · May 2025–Present</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">Graduate Credential</div>
+        <div class="hero-card-value"><strong>Master of Healthcare Administration</strong><br>Northern Kentucky University · 2023</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">Territory</div>
+        <div class="hero-card-value"><strong>West Virginia · Virginia · Tennessee</strong><br>Multi-state market development</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">Focus Areas</div>
+        <div class="hero-card-value">Market Expansion · Healthcare Operations · Business Development · Compliance</div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">3+</div>
+      <div class="stat-label">States Served</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5+</div>
+      <div class="stat-label">Years in Healthcare</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">M.H.A.</div>
+      <div class="stat-label">Graduate Degree</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Academic Institutions</div>
+    </div>
+  </div>
+</div>
 
 <hr class="divider">
 
 <!-- ABOUT -->
 <section class="section about-bg" id="about">
   <div class="section-inner">
-    <div class="section-eyebrow">About</div>
-    <h2 class="section-title">A Career Built on<br><em>People & Outcomes</em></h2>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>I began my career on the front lines of patient care — working directly with seniors during the height of the COVID-19 pandemic, when communities needed support most. That foundation in direct care shaped everything that followed: a deep understanding of what patients need and what it takes operationally to deliver it.</p>
-        <p>From there I built expertise across every layer of healthcare — clinical scheduling, medical billing, Medicare and Medicaid compliance, insurance coordination, and business development. I've worked across <strong>home health, managed care, and market expansion</strong>, always focused on the same goal: better outcomes for West Virginians.</p>
-        <p>Today as Market Manager at Monogram Health I lead growth initiatives across the state, building the partnerships and systems that connect patients to the care they need.</p>
+    <div class="section-tag">About</div>
+    <h2 class="section-heading">Where Operations Meet<br><em>Patient Outcomes</em></h2>
+    <div class="about-layout">
+      <div>
+        <p class="about-lead">"I started in direct care — and that foundation has never left me."</p>
+        <div class="about-body">
+          <p>During COVID-19, I worked directly with seniors at a moment when the healthcare system needed every available hand. That experience grounded everything that followed: a visceral understanding of what's at stake and what patients actually need — not just operationally, but humanly.</p>
+          <p>From there I built a career across every layer of healthcare: clinical scheduling, revenue cycle, Medicare and Medicaid compliance, CMS appeals, and ultimately business development. I've worked in <strong>home health, managed care, and multi-state market expansion</strong> — always connecting the human side of care to the operational and commercial realities that make it sustainable.</p>
+          <p>Today I bring that full picture to every partnership, contract, and strategy conversation. The goal has never changed: <strong>better outcomes for the communities I serve.</strong></p>
+        </div>
       </div>
-      <div class="about-cards">
-        <div class="about-card">
-          <div class="about-card-label">Current Role</div>
-          <div class="about-card-value"><strong>Market Manager</strong> at Monogram Health — leading market expansion and partnership development across West Virginia.</div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🏥</div>
+          <div class="pillar-label">Clinical Operations</div>
+          <div class="pillar-value">Deep experience in home health operations, medical billing, scheduling, and HIPAA compliance — I understand how care actually gets delivered.</div>
         </div>
-        <div class="about-card">
-          <div class="about-card-label">Expertise</div>
-          <div class="about-card-value">Healthcare operations, business development, Medicare & Medicaid compliance, HIPAA, contract management, and revenue cycle.</div>
+        <div class="pillar">
+          <div class="pillar-icon">📈</div>
+          <div class="pillar-label">Market Development</div>
+          <div class="pillar-value">From identifying opportunities to closing contracts and managing long-term partnerships, I've built and grown healthcare portfolios across multiple states.</div>
         </div>
-        <div class="about-card">
-          <div class="about-card-label">Education</div>
-          <div class="about-card-value"><strong>Master of Healthcare Administration</strong> — Northern Kentucky University, 2023.</div>
+        <div class="pillar">
+          <div class="pillar-icon">⚖️</div>
+          <div class="pillar-label">Regulatory Expertise</div>
+          <div class="pillar-value">Medicare, Medicaid, CMS, and HIPAA aren't abstract — they're the framework inside which I've operated and led teams for years.</div>
         </div>
-        <div class="about-card">
-          <div class="about-card-label">Location</div>
-          <div class="about-card-value">Charleston, West Virginia — serving the state and surrounding region.</div>
+        <div class="pillar">
+          <div class="pillar-icon">🤝</div>
+          <div class="pillar-label">Relationship Leadership</div>
+          <div class="pillar-value">Stakeholders, physicians, payers, and internal teams — I lead through relationships. Building trust is not a tactic; it's the foundation of everything I do.</div>
         </div>
       </div>
     </div>
@@ -243,88 +355,103 @@ textarea.form-input { min-height: 120px; resize: vertical; }
 <!-- EXPERIENCE -->
 <section class="section" id="experience">
   <div class="section-inner">
-    <div class="section-eyebrow">Experience</div>
-    <h2 class="section-title">Professional<br><em>History</em></h2>
-    <div class="timeline">
-
-      <div class="timeline-item current">
-        <div class="timeline-meta">May 2025 — Present · Current</div>
-        <div class="timeline-role">Market Manager</div>
-        <div class="timeline-org">Monogram Health</div>
-        <div class="timeline-desc">Leading market development and partnership growth across West Virginia, connecting patients with specialized health management services and expanding Monogram's footprint in the state.</div>
-        <div class="timeline-tags">
-          <span class="ttag">Market Expansion</span>
-          <span class="ttag">Business Development</span>
-          <span class="ttag">Partnership Management</span>
-          <span class="ttag">West Virginia</span>
+    <div class="section-tag">Experience</div>
+    <h2 class="section-heading">Professional<br><em>History</em></h2>
+    <div class="exp-layout">
+      <div class="exp-nav">
+        <div class="exp-nav-item active" onclick="scrollToExp('exp1')">
+          <span class="exp-nav-label">Current · 2025</span>
+          Monogram Health
+        </div>
+        <div class="exp-nav-item" onclick="scrollToExp('exp2')">
+          <span class="exp-nav-label">2024 – 2025</span>
+          Vis-À-Vis Health
+        </div>
+        <div class="exp-nav-item" onclick="scrollToExp('exp3')">
+          <span class="exp-nav-label">2023 – 2024</span>
+          LHC Group
+        </div>
+        <div class="exp-nav-item" onclick="scrollToExp('exp4')">
+          <span class="exp-nav-label">2023</span>
+          Aetna / CVS Health
+        </div>
+        <div class="exp-nav-item" onclick="scrollToExp('exp5')">
+          <span class="exp-nav-label">2022 – 2023</span>
+          First Choice Services
+        </div>
+        <div class="exp-nav-item" onclick="scrollToExp('exp6')">
+          <span class="exp-nav-label">2020</span>
+          Amada Senior Care
         </div>
       </div>
+      <div class="exp-entries">
 
-      <div class="timeline-item">
-        <div class="timeline-meta">Apr 2024 — May 2025 · 1 yr 2 mos</div>
-        <div class="timeline-role">Business Development Manager</div>
-        <div class="timeline-org">Vis-À-Vis Health · Hybrid</div>
-        <div class="timeline-desc">Led expansion of a medical business portfolio across West Virginia — identifying opportunities, cultivating client relationships, and negotiating contracts. Managed contracts across numerous medical facilities while serving as primary point of contact for all in-state accounts. Utilized data-driven insights to evaluate performance and drive strategic growth decisions.</div>
-        <div class="timeline-tags">
-          <span class="ttag">Contract Negotiation</span>
-          <span class="ttag">Account Management</span>
-          <span class="ttag">Stakeholder Relations</span>
-          <span class="ttag">Data Analysis</span>
-          <span class="ttag">Cross-Functional Leadership</span>
+        <div class="exp-entry current" id="exp1">
+          <div class="exp-entry-top">
+            <div>
+              <div class="exp-meta">May 2025 — Present</div>
+              <div class="exp-role">Market Manager</div>
+              <div class="exp-org">Monogram Health · WV · VA · TN</div>
+            </div>
+            <div class="exp-current-badge">Current</div>
+          </div>
+          <div class="exp-desc">Leading market development and growth across West Virginia, Virginia, and Tennessee — building the partnerships and systems that connect patients with specialized health management services and expanding Monogram's presence across the tri-state region.</div>
+          <div class="exp-tags">
+            <span class="etag">Market Expansion</span><span class="etag">Business Development</span><span class="etag">Partnership Management</span><span class="etag">Multi-State</span>
+          </div>
         </div>
-      </div>
 
-      <div class="timeline-item">
-        <div class="timeline-meta">Aug 2023 — Feb 2024 · 7 mos</div>
-        <div class="timeline-role">Business Manager</div>
-        <div class="timeline-org">LHC Group · Charleston, WV</div>
-        <div class="timeline-desc">Oversaw daily operations for a home health office — managing medical claims, payroll auditing, patient scheduling, and clinician coordination. Handled billing for nursing, physical therapy, and home health services. Managed HR operations including onboarding, training, and performance feedback. Ensured full HIPAA compliance and adherence to Medicare and Medicaid standards.</div>
-        <div class="timeline-tags">
-          <span class="ttag">Medical Billing</span>
-          <span class="ttag">Medicare & Medicaid</span>
-          <span class="ttag">HIPAA Compliance</span>
-          <span class="ttag">HR Operations</span>
-          <span class="ttag">Home Health</span>
+        <div class="exp-entry" id="exp2">
+          <div class="exp-meta">Apr 2024 — May 2025 · 1 yr 2 mos</div>
+          <div class="exp-role">Business Development Manager</div>
+          <div class="exp-org">Vis-À-Vis Health · West Virginia · Hybrid</div>
+          <div class="exp-desc">Led statewide expansion of a medical business portfolio — identifying growth opportunities, cultivating client relationships, and negotiating contracts aligned with organizational objectives. Managed contracts across numerous medical facilities while serving as primary point of contact for all in-state accounts. Utilized data-driven insights to evaluate performance and drive continuous improvement.</div>
+          <div class="exp-tags">
+            <span class="etag">Contract Negotiation</span><span class="etag">Account Management</span><span class="etag">Stakeholder Relations</span><span class="etag">Data Analysis</span><span class="etag">Portfolio Growth</span>
+          </div>
         </div>
-      </div>
 
-      <div class="timeline-item">
-        <div class="timeline-meta">Jan 2023 — Aug 2023 · 8 mos</div>
-        <div class="timeline-role">Senior Coordinator, Complaints & Appeals</div>
-        <div class="timeline-org">Aetna / CVS Health · Remote</div>
-        <div class="timeline-desc">Analyzed CMS complaints related to Medicare Part D prescription drug coverage. Navigated multiple EMR systems to research and resolve beneficiary complaints, working within constant legislative changes around Medicare benefits. Made outbound calls to members throughout the resolution process.</div>
-        <div class="timeline-tags">
-          <span class="ttag">Medicare Part D</span>
-          <span class="ttag">CMS Compliance</span>
-          <span class="ttag">EMR Systems</span>
-          <span class="ttag">Complaints Resolution</span>
+        <div class="exp-entry" id="exp3">
+          <div class="exp-meta">Aug 2023 — Feb 2024 · 7 mos</div>
+          <div class="exp-role">Business Manager</div>
+          <div class="exp-org">LHC Group · Charleston, WV</div>
+          <div class="exp-desc">Oversaw complete office operations for a home health agency — medical claims, payroll auditing, patient and clinician scheduling, and billing for nursing, physical therapy, and home health services. Managed HR including onboarding, training, and performance feedback. Ensured full HIPAA compliance and Medicare and Medicaid standards adherence across all operations.</div>
+          <div class="exp-tags">
+            <span class="etag">Medical Billing</span><span class="etag">Medicare & Medicaid</span><span class="etag">HIPAA</span><span class="etag">HR Operations</span><span class="etag">Home Health</span>
+          </div>
         </div>
-      </div>
 
-      <div class="timeline-item">
-        <div class="timeline-meta">May 2022 — Jan 2023 · 9 mos</div>
-        <div class="timeline-role">Tobacco Quitline Coach</div>
-        <div class="timeline-org">First Choice Services · Charleston, WV</div>
-        <div class="timeline-desc">Supported West Virginia residents in permanently quitting tobacco through insurance verification, Nicotine Replacement Therapy coordination, and daily follow-up coaching. Partnered with Medicare, Medicaid, and statewide pharmacies to ensure participant access to support resources.</div>
-        <div class="timeline-tags">
-          <span class="ttag">Patient Coaching</span>
-          <span class="ttag">Insurance Verification</span>
-          <span class="ttag">Community Health</span>
+        <div class="exp-entry" id="exp4">
+          <div class="exp-meta">Jan 2023 — Aug 2023 · 8 mos</div>
+          <div class="exp-role">Senior Coordinator, Complaints & Appeals</div>
+          <div class="exp-org">Aetna / CVS Health · Remote</div>
+          <div class="exp-desc">Analyzed CMS Medicare Part D prescription drug complaints, navigating multiple EMR systems to research beneficiary issues and develop resolutions. Tracked and applied constant legislative changes to Medicare benefits in real time. Made outbound calls to members throughout the resolution process.</div>
+          <div class="exp-tags">
+            <span class="etag">Medicare Part D</span><span class="etag">CMS Compliance</span><span class="etag">EMR Systems</span><span class="etag">Resolution Management</span>
+          </div>
         </div>
-      </div>
 
-      <div class="timeline-item">
-        <div class="timeline-meta">Mar 2020 — Jul 2020 · 5 mos</div>
-        <div class="timeline-role">Home Care Provider</div>
-        <div class="timeline-org">Amada Senior Care · Charleston, WV</div>
-        <div class="timeline-desc">Provided direct care to local seniors during the COVID-19 pandemic, supporting a strained healthcare system at a critical moment. The foundation of a career built on genuine patient-centered service.</div>
-        <div class="timeline-tags">
-          <span class="ttag">Direct Patient Care</span>
-          <span class="ttag">Senior Care</span>
-          <span class="ttag">COVID-19 Response</span>
+        <div class="exp-entry" id="exp5">
+          <div class="exp-meta">May 2022 — Jan 2023 · 9 mos</div>
+          <div class="exp-role">Tobacco Quitline Coach</div>
+          <div class="exp-org">First Choice Services · Charleston, WV</div>
+          <div class="exp-desc">Supported West Virginia residents in permanently quitting tobacco through insurance verification, Nicotine Replacement Therapy coordination, and daily follow-up coaching. Partnered with Medicare, Medicaid, and statewide pharmacies to ensure participants had the support needed to reach their goals.</div>
+          <div class="exp-tags">
+            <span class="etag">Patient Coaching</span><span class="etag">Insurance Verification</span><span class="etag">Community Health</span>
+          </div>
         </div>
-      </div>
 
+        <div class="exp-entry" id="exp6">
+          <div class="exp-meta">Mar 2020 — Jul 2020 · 5 mos</div>
+          <div class="exp-role">Home Care Provider</div>
+          <div class="exp-org">Amada Senior Care · Charleston, WV</div>
+          <div class="exp-desc">Provided direct care to seniors during the height of the COVID-19 pandemic, supporting a strained healthcare system at a critical moment. The foundation of a career built on genuine patient-centered service.</div>
+          <div class="exp-tags">
+            <span class="etag">Direct Patient Care</span><span class="etag">Senior Care</span><span class="etag">COVID-19 Response</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
@@ -333,33 +460,42 @@ textarea.form-input { min-height: 120px; resize: vertical; }
 
 <!-- EDUCATION -->
 <section class="section edu-bg" id="education">
-  <div class="section-inner">
-    <div class="edu-eyebrow">Education</div>
-    <h2 class="edu-section-title">Academic<br><em>Credentials</em></h2>
+  <div class="edu-inner" style="padding: 0 3rem;">
+    <div class="edu-tag">Education</div>
+    <h2 class="edu-heading">Academic<br><em>Foundation</em></h2>
     <div class="edu-grid">
 
       <div class="edu-card">
-        <div class="edu-type">Graduate Degree</div>
+        <div class="edu-card-top">
+          <div class="edu-type">Graduate</div>
+          <div class="edu-year">2023</div>
+        </div>
         <div class="edu-degree">Master of Healthcare Administration</div>
         <div class="edu-school">Northern Kentucky University</div>
-        <div class="edu-year">2023</div>
-        <div class="edu-note">MHA program focused on healthcare leadership, operations, policy, and organizational management.</div>
+        <div class="edu-note">Healthcare leadership, operations, policy, and organizational management. The credential that anchors executive-level practice in the field.</div>
+        <span class="edu-highlight">M.H.A.</span>
       </div>
 
       <div class="edu-card">
-        <div class="edu-type">Bachelor's Degree</div>
+        <div class="edu-card-top">
+          <div class="edu-type">Bachelor's</div>
+          <div class="edu-year">2020 – 2022</div>
+        </div>
         <div class="edu-degree">B.S. Health Services & Allied Health Sciences</div>
         <div class="edu-school">Marshall University</div>
-        <div class="edu-year">2020 — 2022</div>
-        <div class="edu-note">Graduated with honors. Foundation in health systems, patient services, and healthcare administration.</div>
+        <div class="edu-note">Foundation in health systems, patient services, and healthcare administration. Graduated with honors.</div>
+        <span class="edu-highlight">B.S. · Graduate with Honors</span>
       </div>
 
       <div class="edu-card">
-        <div class="edu-type">Undergraduate Studies</div>
+        <div class="edu-card-top">
+          <div class="edu-type">Undergraduate</div>
+          <div class="edu-year">2016 – 2020</div>
+        </div>
         <div class="edu-degree">Health Services Administration</div>
         <div class="edu-school">University of Detroit Mercy</div>
-        <div class="edu-year">2016 — 2020</div>
-        <div class="edu-note">Minor in Leadership. Emerging Leaders Program, Leadership Pin, and Leadership Medallion recipient.</div>
+        <div class="edu-note">Minor in Leadership. Emerging Leaders Program. Leadership Pin and Leadership Medallion recipient — a record of distinction from the start.</div>
+        <span class="edu-highlight">Leadership Pin · Leadership Medallion</span>
       </div>
 
     </div>
@@ -369,37 +505,37 @@ textarea.form-input { min-height: 120px; resize: vertical; }
 <hr class="divider">
 
 <!-- SKILLS -->
-<section class="section skills-bg" id="skills">
+<section class="section" id="skills">
   <div class="section-inner">
-    <div class="section-eyebrow">Skills</div>
-    <h2 class="section-title">Areas of<br><em>Expertise</em></h2>
-    <div class="skills-grid">
+    <div class="section-tag">Skills</div>
+    <h2 class="section-heading">Areas of<br><em>Expertise</em></h2>
+    <div class="skills-layout">
 
-      <div class="skill-group">
-        <div class="skill-group-title">Business & Operations</div>
-        <div class="skill-item"><span class="skill-name">Business Development</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Contract Negotiation</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Market Expansion</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Account Management</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Data-Driven Strategy</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot"></div></div></div>
+      <div>
+        <div class="skill-group-label">Business & Market Development</div>
+        <div class="skill-row"><span class="skill-name">Business Development</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="95" style="width:0%"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Market Expansion</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="95" style="width:0%"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Contract Negotiation</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="88" style="width:0%"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Account Management</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="90" style="width:0%"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Stakeholder Relations</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="95" style="width:0%"></div></div></div>
       </div>
 
-      <div class="skill-group">
-        <div class="skill-group-title">Healthcare & Compliance</div>
-        <div class="skill-item"><span class="skill-name">HIPAA Compliance</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Medicare & Medicaid</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Medical Billing & Coding</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Revenue Cycle Management</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot"></div></div></div>
-        <div class="skill-item"><span class="skill-name">CMS Regulatory Affairs</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot"></div><div class="skill-dot"></div></div></div>
+      <div>
+        <div class="skill-group-label">Healthcare & Compliance</div>
+        <div class="skill-row"><span class="skill-name">HIPAA Compliance</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="95" style="width:0%"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Medicare & Medicaid</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="92" style="width:0%"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Medical Billing & Coding</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="85" style="width:0%"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Revenue Cycle</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="85" style="width:0%"></div></div></div>
+        <div class="skill-row"><span class="skill-name">CMS Regulatory Affairs</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="80" style="width:0%"></div></div></div>
       </div>
 
-      <div class="skill-group">
-        <div class="skill-group-title">Leadership & People</div>
-        <div class="skill-item"><span class="skill-name">Team Leadership</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Stakeholder Relations</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div></div></div>
-        <div class="skill-item"><span class="skill-name">HR & Onboarding</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Cross-Functional Collaboration</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Patient-Centered Care</span><div class="skill-dots"><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div><div class="skill-dot filled"></div></div></div>
+      <div>
+        <div class="skill-group-label">Leadership & Operations</div>
+        <div class="skill-row"><span class="skill-name">Team Leadership</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="92" style="width:0%"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Healthcare Operations</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="92" style="width:0%"></div></div></div>
+        <div class="skill-row"><span class="skill-name">HR & Onboarding</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="85" style="width:0%"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Cross-Functional Leadership</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="90" style="width:0%"></div></div></div>
+        <div class="skill-row"><span class="skill-name">Patient-Centered Strategy</span><div class="skill-bar-wrap"><div class="skill-bar" data-w="98" style="width:0%"></div></div></div>
       </div>
 
     </div>
@@ -409,62 +545,90 @@ textarea.form-input { min-height: 120px; resize: vertical; }
 <hr class="divider">
 
 <!-- CONTACT -->
-<section class="section" id="contact">
+<section class="section contact-bg" id="contact">
   <div class="section-inner">
-    <div class="section-eyebrow">Contact</div>
-    <h2 class="section-title">Let's<br><em>Connect</em></h2>
-    <div class="contact-grid">
-      <div>
-        <p class="contact-intro">Whether you're exploring a <em>partnership opportunity</em>, looking to connect professionally, or want to discuss healthcare operations in West Virginia — I'd love to hear from you.</p>
+    <div class="section-tag">Contact</div>
+    <h2 class="section-heading">Let's<br><em>Connect</em></h2>
+    <div class="contact-layout">
+      <div class="contact-left">
+        <p class="contact-headline">Open to conversations about <em>new opportunities, partnerships,</em> and healthcare strategy across the region.</p>
+        <p class="contact-body">Whether you're exploring a partnership, looking to connect professionally, or want to discuss healthcare operations in the tri-state area — I'd love to hear from you.</p>
         <div class="contact-detail">
-          <div class="contact-detail-label">Location</div>
-          <div class="contact-detail-value">Charleston, West Virginia</div>
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-info">
+            <div class="contact-detail-label">Location</div>
+            <div class="contact-detail-value">Charleston, West Virginia</div>
+          </div>
         </div>
         <div class="contact-detail">
-          <div class="contact-detail-label">LinkedIn</div>
-          <div class="contact-detail-value"><a href="https://linkedin.com/in/elise-dennison" target="_blank">linkedin.com/in/elise-dennison</a></div>
+          <div class="contact-detail-icon">🌐</div>
+          <div class="contact-detail-info">
+            <div class="contact-detail-label">LinkedIn</div>
+            <div class="contact-detail-value"><a href="https://www.linkedin.com/in/elise-dennison-8b133620a/" target="_blank">linkedin.com/in/elise-dennison</a></div>
+          </div>
         </div>
         <div class="contact-detail">
-          <div class="contact-detail-label">Focus</div>
-          <div class="contact-detail-value">Healthcare Operations · Business Development · West Virginia Market</div>
+          <div class="contact-detail-icon">🗺</div>
+          <div class="contact-detail-info">
+            <div class="contact-detail-label">Territory</div>
+            <div class="contact-detail-value">West Virginia · Virginia · Tennessee</div>
+          </div>
         </div>
       </div>
       <div>
-        <form action="https://formspree.io/f/xojbdjbq" method="POST">
-          <div>
-            <label class="form-label">Your Name</label>
-            <input type="text" name="name" class="form-input" placeholder="Full name" required>
-          </div>
-          <div>
-            <label class="form-label">Organization</label>
-            <input type="text" name="org" class="form-input" placeholder="Company or institution">
-          </div>
-          <div>
-            <label class="form-label">Email</label>
-            <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
-          </div>
-          <div>
-            <label class="form-label">Message</label>
-            <textarea name="message" class="form-input" placeholder="How can I help?" required></textarea>
-          </div>
-          <button type="submit" class="form-submit">Send Message →</button>
-        </form>
+        <div class="form-wrap">
+          <div class="form-wrap-label">Send a Message</div>
+          <form action="https://formspree.io/f/xojbdjbq" method="POST">
+            <div class="form-row2">
+              <div class="form-group">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" class="form-input" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Organization</label>
+                <input type="text" name="org" class="form-input" placeholder="Company">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea name="message" class="form-input" placeholder="How can I help, or how can we work together?" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message →</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-name">Elise Dennison</div>
-  <div class="footer-copy">© <span id="year"></span> · Healthcare Operations & Market Development · West Virginia</div>
-  <div class="footer-links">
-    <a href="https://linkedin.com/in/elise-dennison" target="_blank" class="footer-link">LinkedIn</a>
-    <a href="#contact" class="footer-link">Contact</a>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-name">Elise Dennison</div>
+      <div class="footer-title">Market Manager · Monogram Health · M.H.A.</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/elise-dennison-8b133620a/" target="_blank" class="footer-link">LinkedIn</a>
+      <a href="#contact" class="footer-link">Contact</a>
+    </div>
+    <div class="footer-copy">© <span id="year"></span> Elise Dennison</div>
   </div>
 </footer>
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Nav scroll effect
+window.addEventListener('scroll', function() {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   a.addEventListener('click', function(e) {
     e.preventDefault();
@@ -472,6 +636,30 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+// Scroll to experience entry
+function scrollToExp(id) {
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.querySelectorAll('.exp-nav-item').forEach(function(n){ n.classList.remove('active'); });
+  event.currentTarget.classList.add('active');
+}
+
+// Animate skill bars on scroll
+var skillsAnimated = false;
+function animateSkills() {
+  if (skillsAnimated) return;
+  var el = document.getElementById('skills');
+  if (!el) return;
+  if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
+    skillsAnimated = true;
+    document.querySelectorAll('.skill-bar').forEach(function(bar, i) {
+      setTimeout(function() { bar.style.width = bar.getAttribute('data-w') + '%'; }, i * 60);
+    });
+  }
+}
+window.addEventListener('scroll', animateSkills);
+animateSkills();
 </script>
 </body>
 </html>
